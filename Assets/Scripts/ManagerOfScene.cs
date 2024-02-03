@@ -6,14 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ManagerOfScene : MonoBehaviour
 {
-    public int numberOfScene;
-
     public void Exit()
     {
         Application.Quit();
     }
 
-    public void ChangeScene()
+    public void ChangeScene(int numberOfScene)
     {
         SceneManager.LoadScene(numberOfScene);
     }
