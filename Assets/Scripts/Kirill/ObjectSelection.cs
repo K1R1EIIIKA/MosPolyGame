@@ -17,6 +17,7 @@ public class ObjectSelection : MonoBehaviour
     private GameObject _vcamObject;
 
     [NonSerialized] public bool isSelected;
+    [NonSerialized] public bool isTransitioning;
 
     private void Awake()
     {
@@ -81,6 +82,8 @@ public class ObjectSelection : MonoBehaviour
             isSelected = true;
             
             SetMoving(true);
+
+            StartCoroutine(SetRotatingAndCross(true));
         }
     }
 
@@ -99,6 +102,15 @@ public class ObjectSelection : MonoBehaviour
     {
         List<Material> materials = _meshRenderer.materials.ToList();
         materials.Remove(materials[^1]);
+        
+        foreach (Material material in materials)
+        {
+            if (material.name.Contains("Aim Glow"))
+            {
+                materials.Remove(material);
+                break;
+            }
+        }
 
         _meshRenderer.SetMaterials(materials);
         isSelected = false;
@@ -108,6 +120,7 @@ public class ObjectSelection : MonoBehaviour
         Destroy(_vcamObject, 1.5f);
         
         SetMoving(false);
+        StartCoroutine(SetRotatingAndCross(false));
     }
 
     public void DeselectAll()
@@ -122,5 +135,38 @@ public class ObjectSelection : MonoBehaviour
     private void SetMoving(bool isMoving)
     {
         scriptToDisable.enabled = isMoving;
+    }
+    
+    private void LockCamera()
+    {
+        _vcamObject.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = 0;
+        _vcamObject.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = 0;
+    }
+    
+    private void UnlockCamera()
+    {
+        _vcamObject.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = 300;
+        _vcamObject.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = 2;
+    }
+
+    private IEnumerator SetRotatingAndCross(bool flag)
+    {
+        LockCamera();
+        if (!_selectObjects.Any(selectObject => selectObject.isSelected) && !flag)
+            GameManager.Instance.cross.SetActive(false);
+        
+        isTransitioning = true;
+        
+        yield return new WaitForSeconds(1);
+            
+        isTransitioning = false;
+        UnlockCamera();
+        if(flag)
+            Cursor.lockState = CursorLockMode.Locked;
+        
+        if (!_selectObjects.Any(selectObject => selectObject.isSelected) && !flag)
+            Cursor.lockState = CursorLockMode.None;
+            
+        GameManager.Instance.cross.SetActive(flag);
     }
 }

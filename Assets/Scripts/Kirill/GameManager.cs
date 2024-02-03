@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
     public Material glowMaterial;
     public Material aimGlowMaterial;
     
-    public CinemachineFreeLook freeLookCamera;
+    // public CinemachineFreeLook freeLookCamera;
     public GameObject cameraPrefab;
 
-    public Transform staticCameraPos;
+    // public Transform staticCameraPos;
     public CinemachineVirtualCamera vcam;
+
+    public GameObject cross;
     
     public static GameManager Instance;
 
