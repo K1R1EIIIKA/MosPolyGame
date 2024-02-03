@@ -1149,6 +1149,7 @@ GameObject:
   - component: {fileID: 640318654}
   - component: {fileID: 640318655}
   - component: {fileID: 640318656}
+  - component: {fileID: 640318657}
   m_Layer: 0
   m_Name: "\u044F\u0439\u0446\u043E"
   m_TagString: Untagged
@@ -1341,6 +1342,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCameraMove: 1
   scriptToDisable: {fileID: 640318649}
+--- !u!114 &640318657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640318647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410eecee70857d24aba2abb1cd175e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &740234308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowMaterial: {fileID: 2100000, guid: 0ee9fa3e17887ce44bac739142d60923, type: 2}
+  aimGlowMaterial: {fileID: 0}
   freeLookCamera: {fileID: 0}
   cameraPrefab: {fileID: 4219288570271111781, guid: 13e897ab8c037a94fbb837ab984d0b73,
     type: 3}
@@ -2871,6 +2885,7 @@ GameObject:
   - component: {fileID: 1685573922}
   - component: {fileID: 1685573923}
   - component: {fileID: 1685573924}
+  - component: {fileID: 1685573925}
   m_Layer: 0
   m_Name: "\u0441\u043E\u043B\u044C"
   m_TagString: Untagged
@@ -3040,6 +3055,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCameraMove: 1
   scriptToDisable: {fileID: 1685573922}
+--- !u!114 &1685573925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685573916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410eecee70857d24aba2abb1cd175e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1737331596
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,9 +14,9 @@ public class ObjectSelection : MonoBehaviour
     private Camera _mainCamera;
     private ObjectSelection[] _selectObjects;
 
-    private GameObject vcamObject;
+    private GameObject _vcamObject;
 
-    private bool _isSelected;
+    [NonSerialized] public bool isSelected;
 
     private void Awake()
     {
@@ -35,18 +35,12 @@ public class ObjectSelection : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && CheckClick())
         {
-            if (!_isSelected)
+            if (!isSelected)
                 Select();
             else
                 Deselect();
         }
         
-        if (Input.GetMouseButton(0) && _isSelected)
-            UnlockCamera();
-        
-        if (Input.GetMouseButtonUp(0) && _isSelected)
-            LockCamera();
-
         if (Input.GetKeyDown(KeyCode.E))
             DeselectAll();
     }
@@ -79,12 +73,12 @@ public class ObjectSelection : MonoBehaviour
 
             foreach (ObjectSelection selectObject in _selectObjects)
             {
-                if (selectObject._isSelected && selectObject != this)
+                if (selectObject.isSelected && selectObject != this)
                     selectObject.Deselect();
             }
 
             _meshRenderer.SetMaterials(materials);
-            _isSelected = true;
+            isSelected = true;
             
             SetMoving(true);
         }
@@ -92,11 +86,9 @@ public class ObjectSelection : MonoBehaviour
 
     private void SetCamera()
     {
-        vcamObject = Instantiate(GameManager.Instance.cameraPrefab, transform.position, Quaternion.identity);
-        CinemachineFreeLook vcam = vcamObject.GetComponent<CinemachineFreeLook>();
+        _vcamObject = Instantiate(GameManager.Instance.cameraPrefab, transform.position, Quaternion.identity);
+        CinemachineFreeLook vcam = _vcamObject.GetComponent<CinemachineFreeLook>();
         
-        LockCamera();
-
         vcam.Follow = transform;
         vcam.LookAt = transform;
 
@@ -109,11 +101,11 @@ public class ObjectSelection : MonoBehaviour
         materials.Remove(materials[^1]);
 
         _meshRenderer.SetMaterials(materials);
-        _isSelected = false;
+        isSelected = false;
 
-        vcamObject.GetComponent<CinemachineFreeLook>().Priority = 0;
+        _vcamObject.GetComponent<CinemachineFreeLook>().Priority = 0;
 
-        Destroy(vcamObject, 1.5f);
+        Destroy(_vcamObject, 1.5f);
         
         SetMoving(false);
     }
@@ -122,21 +114,9 @@ public class ObjectSelection : MonoBehaviour
     {
         foreach (var selectObject in _selectObjects)
         {
-            if (selectObject._isSelected)
+            if (selectObject.isSelected)
                 selectObject.Deselect();
         }
-    }
-
-    private void LockCamera()
-    {
-        vcamObject.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = 0;
-        vcamObject.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = 0;
-    }
-    
-    private void UnlockCamera()
-    {
-        vcamObject.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = 300;
-        vcamObject.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = 2;
     }
 
     private void SetMoving(bool isMoving)

@@ -339,8 +339,8 @@ MonoBehaviour:
     m_Radius: 3.12
   - m_Height: 2.5
     m_Radius: 4.88
-  - m_Height: -0.59
-    m_Radius: 6.04
+  - m_Height: -0.46
+    m_Radius: 4.18
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 4984767311521154981}

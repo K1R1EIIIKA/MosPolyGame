@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCameraMove: 1
+  scriptToDisable: {fileID: 0}
 --- !u!65 &132781129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1171,6 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCameraMove: 1
+  scriptToDisable: {fileID: 0}
 --- !u!1 &1070276346
 GameObject:
   m_ObjectHideFlags: 3
@@ -1629,6 +1631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCameraMove: 1
+  scriptToDisable: {fileID: 0}
 --- !u!1 &1550733457
 GameObject:
   m_ObjectHideFlags: 3
