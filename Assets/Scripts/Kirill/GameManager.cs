@@ -7,6 +7,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Material glowMaterial;
+    public Material aimGlowMaterial;
+    
     public CinemachineFreeLook freeLookCamera;
     public GameObject cameraPrefab;
 

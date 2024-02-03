@@ -30,8 +30,6 @@ public class SaltWalking : MonoBehaviour
         {
             playerAnim.SetBool("PlayAnim", false);
         }
-
-
     }
 
     private void OnDisable()
