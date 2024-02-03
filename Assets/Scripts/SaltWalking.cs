@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,11 @@ public class SaltWalking : MonoBehaviour
         }
 
 
+    }
+
+    private void OnDisable()
+    {
+        playerAnim.SetBool("PlayAnim", false);
     }
 
     void FixedUpdate()

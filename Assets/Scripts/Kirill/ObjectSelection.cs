@@ -8,6 +8,7 @@ using UnityEngine;
 public class ObjectSelection : MonoBehaviour
 {
     [SerializeField] private bool isCameraMove;
+    [SerializeField] private MonoBehaviour scriptToDisable;
 
     private MeshRenderer _meshRenderer;
     private Camera _mainCamera;
@@ -27,6 +28,7 @@ public class ObjectSelection : MonoBehaviour
     private void Start()
     {
         DeselectAll();
+        SetMoving(false);
     }
 
     private void Update()
@@ -83,6 +85,8 @@ public class ObjectSelection : MonoBehaviour
 
             _meshRenderer.SetMaterials(materials);
             _isSelected = true;
+            
+            SetMoving(true);
         }
     }
 
@@ -110,6 +114,8 @@ public class ObjectSelection : MonoBehaviour
         vcamObject.GetComponent<CinemachineFreeLook>().Priority = 0;
 
         Destroy(vcamObject, 1.5f);
+        
+        SetMoving(false);
     }
 
     public void DeselectAll()
@@ -131,5 +137,10 @@ public class ObjectSelection : MonoBehaviour
     {
         vcamObject.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = 300;
         vcamObject.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = 2;
+    }
+
+    private void SetMoving(bool isMoving)
+    {
+        scriptToDisable.enabled = isMoving;
     }
 }
