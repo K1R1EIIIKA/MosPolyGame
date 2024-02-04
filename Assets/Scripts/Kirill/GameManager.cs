@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     // public Transform staticCameraPos;
     public CinemachineVirtualCamera vcam;
+    public CinemachineVirtualCamera vcamMouseTrap;
+    
+    public bool isInTheMouseTrap;
 
     public GameObject cross;
     

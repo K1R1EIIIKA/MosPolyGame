@@ -34,7 +34,7 @@ public class ObjectSelection : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && CheckClick())
+        if (Input.GetMouseButtonDown(0) && CheckClick() && !GameManager.Instance.isInTheMouseTrap)
         {
             if (!isSelected)
                 Select();
@@ -98,19 +98,12 @@ public class ObjectSelection : MonoBehaviour
         vcam.Priority = 11;
     }
 
-    private void Deselect()
+    public void Deselect()
     {
         List<Material> materials = _meshRenderer.materials.ToList();
         materials.Remove(materials[^1]);
         
-        foreach (Material material in materials)
-        {
-            if (material.name.Contains("Aim Glow"))
-            {
-                materials.Remove(material);
-                break;
-            }
-        }
+        ObjectAiming.RemoveAimGlow(materials);
 
         _meshRenderer.SetMaterials(materials);
         isSelected = false;

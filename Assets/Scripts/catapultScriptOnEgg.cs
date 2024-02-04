@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,9 +28,6 @@ public class catapultScriptOnEgg : MonoBehaviour
     
     [SerializeField] private Transform gunPoint;
 
-
-
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -55,6 +53,13 @@ public class catapultScriptOnEgg : MonoBehaviour
             movingScript.enabled = false;
             rb.isKinematic = true;
             transform.position = collision.transform.position + offset;
+            
+            ObjectSelection objectSelection = GetComponent<ObjectSelection>();
+            if (objectSelection.isSelected)
+                objectSelection.Deselect();
+
+            GameManager.Instance.vcamMouseTrap.Priority = 12;
+            GameManager.Instance.isInTheMouseTrap = true;
         }
     }
 
@@ -62,11 +67,11 @@ public class catapultScriptOnEgg : MonoBehaviour
     {
         inCatapult = false;
         power = powerSlider.value;
-        movingScript.enabled = true;
         rb.isKinematic = false;
         rb.AddForce(transform.forward * power, ForceMode.Impulse);
         catapultPanel.SetActive(false);
+        
+        GameManager.Instance.vcamMouseTrap.Priority = 0;
+        GameManager.Instance.isInTheMouseTrap = false;
     }
-
-
 }
