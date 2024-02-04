@@ -18,7 +18,7 @@ public class ObjectAiming : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (_objectSelection.isSelected || _objectSelection.isTransitioning)
+        if (_objectSelection && (_objectSelection.isSelected || _objectSelection.isTransitioning))
             return;
         
         List<Material> materials = _meshRenderer.materials.ToList();
@@ -30,7 +30,7 @@ public class ObjectAiming : MonoBehaviour
     
     private void OnMouseExit()
     {
-        if (_objectSelection.isTransitioning)
+        if (_objectSelection && _objectSelection.isTransitioning)
             return;
 
         List<Material> materials = _meshRenderer.materials.ToList();

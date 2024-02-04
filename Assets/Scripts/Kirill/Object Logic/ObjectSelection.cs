@@ -91,9 +91,28 @@ public class ObjectSelection : MonoBehaviour
     {
         _vcamObject = Instantiate(GameManager.Instance.cameraPrefab, transform.position, Quaternion.identity);
         CinemachineFreeLook vcam = _vcamObject.GetComponent<CinemachineFreeLook>();
+
+        bool hasStabilizator = false;
+        CameraStabilizeObject stabil = null;
+        foreach (Transform o in transform)
+        {
+            if (o.TryGetComponent(out stabil))
+            {
+                hasStabilizator = true;
+                break;
+            }
+        }
         
-        vcam.Follow = transform;
-        vcam.LookAt = transform;
+        if (!hasStabilizator)
+        {
+            vcam.Follow = transform;
+            vcam.LookAt = transform;
+        }
+        else
+        {
+            vcam.Follow = stabil.transform;
+            vcam.LookAt = stabil.transform;
+        }
 
         vcam.Priority = 11;
     }

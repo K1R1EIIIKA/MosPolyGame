@@ -9,6 +9,7 @@ public class SaltWalking : MonoBehaviour
     private Vector3 playerVelocity;  
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float gravityValue = -9.81f;
+    [SerializeField] private Transform camera;
 
     [SerializeField] private Animator playerAnim;
     private void Start()  
@@ -18,18 +19,29 @@ public class SaltWalking : MonoBehaviour
 
     void Update()  
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));  
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
-        if (move != Vector3.zero)
+        // Нажатие стрелочки вперёд или назад
+        float moveVertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 direction = new Vector3(moveHorizontal, 0, moveVertical).normalized;
+        if (direction.magnitude >= 0.1f)
         {
-            playerAnim.SetBool("PlayAnim", true);
-            //    gameObject.transform.forward = move;
+            float rotationAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg * camera.eulerAngles.y;
+            Vector3 movement = Quaternion.Euler(0f, rotationAngle, 0f) * Vector3.forward;
+            controller.Move(movement * Time.deltaTime * playerSpeed);
+            //if (true)
+            //{
+            //    playerAnim.SetBool("PlayAnim", true);
+            //    //    gameObject.transform.forward = move;
+            //}
+            //else
+            //{
+            //    playerAnim.SetBool("PlayAnim", false);
+            //}
+            //rb.AddForce(movement * speed);
         }
-        else
-        {
-            playerAnim.SetBool("PlayAnim", false);
-        }
+        //Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));  
     }
 
     private void OnDisable()
