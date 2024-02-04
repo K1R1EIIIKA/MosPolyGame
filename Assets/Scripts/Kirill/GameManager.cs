@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public Material glowMaterial;
     public Material aimGlowMaterial;
+    public Material aimWithoutSelectionGlowMaterial;
     
     // public CinemachineFreeLook freeLookCamera;
     public GameObject cameraPrefab;

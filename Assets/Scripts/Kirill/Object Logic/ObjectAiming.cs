@@ -6,13 +6,20 @@ using UnityEngine;
 
 public class ObjectAiming : MonoBehaviour
 {
+    public enum ObjectAction
+    {
+        None,
+        Select,
+        Cut
+    }
+    
     private MeshRenderer _meshRenderer;
     private ObjectSelection _objectSelection;
+    public ObjectAction action;
 
     private void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        // TODO: тут надо учитывать что этого может не бтыьб
         _objectSelection = GetComponent<ObjectSelection>();
     }
 
@@ -22,10 +29,23 @@ public class ObjectAiming : MonoBehaviour
             return;
         
         List<Material> materials = _meshRenderer.materials.ToList();
-        
-        materials.Add(GameManager.Instance.aimGlowMaterial);
+
+        AddMaterial(materials);
         
         _meshRenderer.materials = materials.ToArray();
+    }
+    
+    private void AddMaterial(List<Material> materials)
+    {
+        switch (action)
+        {
+            case ObjectAction.None:
+                materials.Add(GameManager.Instance.aimWithoutSelectionGlowMaterial);
+                break;
+            case ObjectAction.Select: case ObjectAction.Cut:
+                materials.Add(GameManager.Instance.aimGlowMaterial);
+                break;
+        }
     }
     
     private void OnMouseExit()
@@ -44,7 +64,7 @@ public class ObjectAiming : MonoBehaviour
     {
         foreach (Material material in materials)
         {
-            if (material.name.Contains("Aim Glow"))
+            if (material.name.Contains("Aim Glow") || material.name.Contains("AimWithoutSelect Glow"))
             {
                 materials.Remove(material);
                 break;
