@@ -6,31 +6,17 @@ public class FryingMechanic : MonoBehaviour
 {
     [SerializeField] private MonoBehaviour movingScript;
     
-    [SerializeField] private float fryingTimeSeconds;
-
-    //[SerializeField] private float 
-
     private Rigidbody rb;
     
     [SerializeField] private GameObject PanPanel;
 
     [SerializeField] private Vector3 offset;
 
-    //[SerializeField] private bool inPan = false;
+    [SerializeField] private bool inPan = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    private IEnumerator DelayLogicCorutine(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-    }
-    
-    public void DelayLogic()
-    {
-        StartCoroutine(DelayLogicCorutine(fryingTimeSeconds));
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,7 +24,7 @@ public class FryingMechanic : MonoBehaviour
         if (collision.gameObject.tag == "Pan")
         {
             PanPanel.SetActive(true);
-            //inCatapult = true;
+            inPan = true;
             movingScript.enabled = false;
             rb.isKinematic = true;
             transform.position = collision.transform.position + offset;
