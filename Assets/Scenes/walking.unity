@@ -1998,7 +1998,7 @@ GameObject:
   - component: {fileID: 939937234}
   - component: {fileID: 939937233}
   m_Layer: 0
-  m_Name: Virtual Camera
+  m_Name: Static Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2659,8 +2659,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.07, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.709999, y: 0.07, z: 4.7474165}
+  m_Center: {x: 0.16389275, y: 0, z: 0.41085482}
 --- !u!4 &1300735189
 Transform:
   m_ObjectHideFlags: 0
@@ -2844,6 +2844,8 @@ MonoBehaviour:
   cameraPrefab: {fileID: 4219288570271111781, guid: 13e897ab8c037a94fbb837ab984d0b73,
     type: 3}
   vcam: {fileID: 939937233}
+  vcamMouseTrap: {fileID: 1995953365}
+  isInTheMouseTrap: 0
   cross: {fileID: 1381942123}
 --- !u!4 &1417587248
 Transform:
@@ -3736,7 +3738,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995953364}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19796036, y: -0.0018726883, z: 0.00037820335, w: 0.98020816}
+  m_LocalRotation: {x: 0.19796038, y: -0.0018727211, z: 0.0003782101, w: 0.98020816}
   m_LocalPosition: {x: 8.94, y: 3.74, z: -12.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
