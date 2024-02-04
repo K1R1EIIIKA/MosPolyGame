@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-
 public class SaltMovingWithCamera : MonoBehaviour
 {
     [SerializeField] private Camera mainCam;
@@ -17,13 +17,11 @@ public class SaltMovingWithCamera : MonoBehaviour
     [SerializeField] private float gravityValue = -9.81f;
 
     [SerializeField] private Animator playerAnim;
-
-
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
     }
-
 
     void FixedUpdate()
     {
@@ -36,11 +34,10 @@ public class SaltMovingWithCamera : MonoBehaviour
         if (move.sqrMagnitude > 1)
         {
             move.Normalize();
-            
-            
-               //    gameObject.transform.forward = move;
+            //    gameObject.transform.forward = move;
         }
-        if(move != Vector3.zero)
+
+        if (move != Vector3.zero)
         {
             playerAnim.SetBool("PlayAnim", true);
         }
@@ -51,10 +48,12 @@ public class SaltMovingWithCamera : MonoBehaviour
 
         controller.Move(move * speed);
 
-
         playerVelocity.y += gravityValue;
         controller.Move(playerVelocity);
+    }
 
+    private void OnDisable()
+    {
+        playerAnim.SetBool("PlayAnim", false);
     }
 }
-

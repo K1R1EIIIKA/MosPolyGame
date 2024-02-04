@@ -42,9 +42,6 @@ public class SaltWalking : MonoBehaviour
             //rb.AddForce(movement * speed);
         }
         //Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));  
-        
-
-        
     }
 
     private void OnDisable()
