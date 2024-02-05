@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         Debug.Log("You win!");
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
             
         winCanvas.SetActive(true);
         isWon = true;
