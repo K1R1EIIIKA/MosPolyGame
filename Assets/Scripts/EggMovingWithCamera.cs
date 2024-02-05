@@ -26,8 +26,11 @@ public class EggMovingWithCamera : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        if (GetComponent<ObjectSelection>().isSelected)
-            SetRollingSound();
+        if (TryGetComponent(out ObjectSelection selection))
+        {
+            if (selection.isSelected)
+                SetRollingSound();
+        }
 
         Vector3 move = mainCam.transform.right * moveHorizontal + mainCam.transform.forward * moveVertical;
         if (move.sqrMagnitude > 1)
