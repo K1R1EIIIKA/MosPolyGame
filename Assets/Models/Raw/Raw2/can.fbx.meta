@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Models/Raw/Raw2/can.fbx.meta
 guid: 599fa43e7fa1ec848a1a875f94519d55
+========
+guid: 4d5f41567af784d47a1acfd5352a58cf
+>>>>>>>> 6abbf02 (bpy.ops.view3d.copybuffer()):Assets/Models/Raw/Raw2/fork.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
