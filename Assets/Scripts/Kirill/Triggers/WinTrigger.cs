@@ -12,6 +12,7 @@ public class WinTrigger : MonoBehaviour
             Time.timeScale = 0;
             
             GameManager.Instance.winCanvas.SetActive(true);
+            GameManager.Instance.isWon = true;
             
             AudioManager.Instance.Play("Win");
         }

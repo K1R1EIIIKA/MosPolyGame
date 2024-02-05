@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public bool isInTheMouseTrap;
 
     public GameObject cross;
+    [HideInInspector] public bool isWon;
     
     [Header("Canvases")]
     public GameObject winCanvas;

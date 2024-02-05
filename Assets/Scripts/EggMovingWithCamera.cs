@@ -25,7 +25,6 @@ public class EggMovingWithCamera : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Debug.Log(moveHorizontal + " " + moveVertical + " " + FindObjectOfType<AudioManager>().IsPlaying("Egg Rolling"));
         if ((moveHorizontal != 0 || moveVertical != 0) && !FindObjectOfType<AudioManager>().IsPlaying("Egg Rolling"))
             FindObjectOfType<AudioManager>().Play("Egg Rolling");
         else if (moveHorizontal == 0 && moveVertical == 0)
