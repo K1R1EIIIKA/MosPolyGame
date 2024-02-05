@@ -35,4 +35,22 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void Win()
+    {
+        Debug.Log("You win!");
+        Time.timeScale = 0;
+            
+        winCanvas.SetActive(true);
+        isWon = true;
+            
+        Cursor.lockState = CursorLockMode.None;
+        AudioManager.Instance.StopAllSoundType(SoundType.SFX);
+        AudioManager.Instance.Play("Win");
+    }
 }

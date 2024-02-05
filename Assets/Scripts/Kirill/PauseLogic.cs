@@ -26,6 +26,7 @@ public class PauseLogic : MonoBehaviour
 
     public void Pause()
     {
+        AudioManager.Instance.StopAllSoundType(SoundType.SFX);
         _currentMode = Cursor.lockState;
         Cursor.lockState = CursorLockMode.None;
 

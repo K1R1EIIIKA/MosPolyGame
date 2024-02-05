@@ -8,13 +8,7 @@ public class WinTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PanTarget"))
         {
-            Debug.Log("You win!");
-            Time.timeScale = 0;
-            
-            GameManager.Instance.winCanvas.SetActive(true);
-            GameManager.Instance.isWon = true;
-            
-            AudioManager.Instance.Play("Win");
+            GameManager.Instance.Win();
         }
     }
 }

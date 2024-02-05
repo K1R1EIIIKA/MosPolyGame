@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -25,10 +26,8 @@ public class EggMovingWithCamera : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        if ((moveHorizontal != 0 || moveVertical != 0) && !FindObjectOfType<AudioManager>().IsPlaying("Egg Rolling"))
-            FindObjectOfType<AudioManager>().Play("Egg Rolling");
-        else if (moveHorizontal == 0 && moveVertical == 0)
-            FindObjectOfType<AudioManager>().Stop("Egg Rolling");
+        if (GetComponent<ObjectSelection>().isSelected)
+            SetRollingSound();
 
         Vector3 move = mainCam.transform.right * moveHorizontal + mainCam.transform.forward * moveVertical;
         if (move.sqrMagnitude > 1)
@@ -38,6 +37,44 @@ public class EggMovingWithCamera : MonoBehaviour
 
         rb.AddForce(move * speed);
         
+    }
+
+    private void SetRollingSound()
+    {
+        float eggSpeed = rb.velocity.magnitude;
+
+        if (eggSpeed > 5)
+        {
+            AudioManager.Instance.ChangeSoundPitch("Egg Rolling", Mathf.Clamp(0.5f + (eggSpeed - 5) / 10, 0.4f, 1f));
+            AudioManager.Instance.ChangeSoundVolume("Egg Rolling", Mathf.Clamp(AudioManager.Instance.GetSoundVolume("Egg Rolling") + 0.1f, 0.1f, 1f));
+        }
+        else if (eggSpeed <= 5 && eggSpeed > 2)
+        {
+            AudioManager.Instance.ChangeSoundPitch("Egg Rolling", Mathf.Clamp(0.5f + (eggSpeed - 2) / 10, 0.4f, 1f));
+            AudioManager.Instance.ChangeSoundVolume("Egg Rolling", Mathf.Clamp(AudioManager.Instance.GetSoundVolume("Egg Rolling") - 0.1f, 0.1f, 1f));
+        }
+        else if (eggSpeed >= movingLimit && eggSpeed <= 2)
+        {
+            AudioManager.Instance.ChangeSoundPitch("Egg Rolling", Mathf.Clamp(0.5f + (eggSpeed - 1) / 10, 0.4f, 1f));
+            AudioManager.Instance.ChangeSoundVolume("Egg Rolling", Mathf.Clamp(AudioManager.Instance.GetSoundVolume("Egg Rolling") - 0.1f, 0.1f, 1f));
+        }
+        else if (eggSpeed < movingLimit && eggSpeed > 0.1f)
+        {
+            AudioManager.Instance.ChangeSoundPitch("Egg Rolling", Mathf.Clamp(0.5f + (eggSpeed - 0.1f) / 10, 0.4f, 1f));
+            AudioManager.Instance.ChangeSoundVolume("Egg Rolling", Mathf.Clamp(AudioManager.Instance.GetSoundVolume("Egg Rolling") - 0.1f, 0.1f, 1f));
+        }
+
+        Debug.Log(AudioManager.Instance.GetSoundPitch("Egg Rolling"));
+        
+        if (eggSpeed >= movingLimit && !AudioManager.Instance.IsPlaying("Egg Rolling"))
+            FindObjectOfType<AudioManager>().Play("Egg Rolling");
+        else if (eggSpeed <= movingLimit)
+            FindObjectOfType<AudioManager>().Stop("Egg Rolling");
+    }
+
+    private void OnDisable()
+    {
+        AudioManager.Instance.Stop("Egg Rolling");
     }
 
     void Update()

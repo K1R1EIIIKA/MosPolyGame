@@ -25,14 +25,20 @@ public class AudioManager : MonoBehaviour
         {
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
-            sound.source.volume = sound.volume;
+            sound.source.pitch = sound.pitch;
+            sound.source.volume = sound.volume * sound.settingsVolume;
             sound.source.loop = sound.loop;
         }
     }
     
+    private Sound FindSound(string soundName)
+    {
+        return Array.Find(sounds, s => s.name == soundName);
+    }
+    
     public void Play(string soundName)
     {
-        Sound sound = Array.Find(sounds, s => s.name == soundName);
+        Sound sound = FindSound(soundName);
         if (sound == null)
             return;
         
@@ -41,7 +47,7 @@ public class AudioManager : MonoBehaviour
     
     public bool IsPlaying(string soundName)
     {
-        Sound sound = Array.Find(sounds, s => s.name == soundName);
+        Sound sound = FindSound(soundName);
         if (sound == null)
             return false;
         
@@ -50,7 +56,7 @@ public class AudioManager : MonoBehaviour
     
     public void Stop(string soundName)
     {
-        Sound sound = Array.Find(sounds, s => s.name == soundName);
+        Sound sound = FindSound(soundName);
         if (sound == null)
             return;
         
@@ -65,6 +71,15 @@ public class AudioManager : MonoBehaviour
         }
     }
     
+    public void StopAllSoundType(SoundType soundType)
+    {
+        foreach (Sound sound in sounds)
+        {
+            if (sound.soundType == soundType)
+                sound.source.Stop();
+        }
+    }
+    
     public void VolumeAll(float volume, SoundType soundType)
     {
         foreach (Sound sound in sounds)
@@ -72,5 +87,41 @@ public class AudioManager : MonoBehaviour
             if (sound.soundType == soundType)
                 sound.source.volume = volume * sound.settingsVolume;
         }
+    }
+    
+    public float GetSoundVolume(string soundName)
+    {
+        Sound sound = FindSound(soundName);
+        if (sound == null)
+            return 0;
+        
+        return sound.source.volume;
+    }
+    
+    public void ChangeSoundVolume(string soundName, float volume)
+    {
+        Sound sound = FindSound(soundName);
+        if (sound == null)
+            return;
+        
+        sound.source.volume = volume * sound.settingsVolume;
+    }
+    
+    public float GetSoundPitch(string soundName)
+    {
+        Sound sound = FindSound(soundName);
+        if (sound == null)
+            return 0;
+        
+        return sound.source.pitch;
+    }
+    
+    public void ChangeSoundPitch(string soundName, float pitch)
+    {
+        Sound sound = FindSound(soundName);
+        if (sound == null)
+            return;
+        
+        sound.source.pitch = pitch;
     }
 }
