@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8396873189328755526}
   - component: {fileID: 9095744421288572141}
   - component: {fileID: 6311313648256831692}
-  - component: {fileID: 1129302455698107742}
+  - component: {fileID: 6664608422250648585}
   m_Layer: 0
   m_Name: hood
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1609534713167617889}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000009735359, y: -2.6625498e-23, z: -1.1102232e-16, w: 1}
-  m_LocalPosition: {x: 0.0000005348893, y: -0.000000017136015, z: 0.00000238756}
-  m_LocalScale: {x: 1.1499857, y: 1.1499858, z: 1.1499857}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1129302455698107742
-MeshCollider:
+--- !u!65 &6664608422250648585
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,7 +103,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8348165731046832307, guid: b7a4d6739329ab44091b7c3056960c68, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 10.888599, y: 1.276342, z: 15.490164}
+  m_Center: {x: 5.444298, y: 0.63816863, z: 0.00000166893}
