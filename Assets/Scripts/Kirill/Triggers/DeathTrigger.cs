@@ -8,7 +8,6 @@ public class DeathTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PanTarget"))
         {
-            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             CheckPointLogic.Instance.SpawnOnCheckPoint(other.gameObject);
         }
     }
