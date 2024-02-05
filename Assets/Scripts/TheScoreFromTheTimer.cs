@@ -5,7 +5,8 @@ using UnityEngine;
 public class TheScoreFromTheTimer : MonoBehaviour
 {
     [SerializeField] private List<GameObject> stars;
-    [SerializeField] private GameObject starPanel;
+    //[SerializeField] private GameObject starPanel;
+    [SerializeField] private GameObject timerGO;
     [SerializeField] private List<int> lostStarsSeconds;
     private int countStars;
     private int starsNow;
@@ -14,12 +15,13 @@ public class TheScoreFromTheTimer : MonoBehaviour
 
     private void Start()
     {
-        timerScript = GetComponent<Timer>();
+        timerScript = timerGO.GetComponent<Timer>();
         countStars = lostStarsSeconds.Count;
         starsNow = (stars.Count - countStars) + countStars;
+        CheckStars();
     }
 
-    public void CheckStars()
+    private void CheckStars()
     {
         for (int i = 0; i < countStars; i++)
         {
@@ -29,7 +31,7 @@ public class TheScoreFromTheTimer : MonoBehaviour
                 starsNow--;
             }
         }
-        starPanel.SetActive(true); 
+        //starPanel.SetActive(true); 
         StarsShow();
 
     }

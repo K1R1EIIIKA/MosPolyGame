@@ -13,22 +13,25 @@ public class Timer : MonoBehaviour
     private int hours;
 
     private bool corutineActive;
+    private bool levelEnd;
 
 
     private void Start()
     {
         corutineActive = false;
+        levelEnd = false;
     }
 
     private void Update()
     {
-        if(!corutineActive)
+        if(!corutineActive && !levelEnd)
         {
             DelayLogic();
             TimeTransformations();
+            Print();
         }
         
-        Print();
+        
     }
 
     private void DelayLogic()
@@ -66,5 +69,10 @@ public class Timer : MonoBehaviour
     public int OutPutSeconds()
     {
         return seconds;
+    }
+
+    public void LevelEnd()
+    {
+        levelEnd = true;
     }
 }
