@@ -72,10 +72,11 @@ public class EggMovingWithCamera : MonoBehaviour
             FindObjectOfType<AudioManager>().Stop("Egg Rolling");
     }
 
-    private void OnDisable()
-    {
-        AudioManager.Instance.Stop("Egg Rolling");
-    }
+    // private void OnDisable()
+    // {
+    //     if (AudioManager.Instance.IsPlaying("Egg Rolling"))
+    //         AudioManager.Instance.Stop("Egg Rolling");
+    // }
 
     void Update()
     {

@@ -34,7 +34,7 @@ public class ObjectSelection : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && CheckClick() && !GameManager.Instance.isInTheMouseTrap)
+        if (Input.GetMouseButtonDown(0) && CheckClick() && !GameManager.Instance.isInTheMouseTrap && Time.timeScale != 0)
         {
             if (!isSelected)
                 Select();
