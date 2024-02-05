@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Catapult
   - Pan
+  - PanTarget
   layers:
   - Default
   - TransparentFX

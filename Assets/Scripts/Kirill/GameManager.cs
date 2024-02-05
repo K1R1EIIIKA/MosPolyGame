@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject cross;
     
+    [Header("Canvases")]
+    public GameObject winCanvas;
+    public GameObject pauseCanvas;
+    
     public static GameManager Instance;
 
     private void Awake()

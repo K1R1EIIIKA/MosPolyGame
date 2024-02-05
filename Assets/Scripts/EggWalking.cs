@@ -12,6 +12,8 @@ public class EggWalking : MonoBehaviour
     [SerializeField] private Vector3 jump;
     [SerializeField] private Transform camera;
 
+    private bool _isMoving;
+
     void Start()
     {
         // Получить доступ к компоненту Rigidbody
