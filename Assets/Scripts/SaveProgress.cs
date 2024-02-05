@@ -23,9 +23,9 @@ public class SaveProgress : MonoBehaviour
         }
     }
 
-    public void DeleteData(int num)
+    public void DeleteData()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(num);
+        //SceneManager.LoadScene(num);
     }
 }
