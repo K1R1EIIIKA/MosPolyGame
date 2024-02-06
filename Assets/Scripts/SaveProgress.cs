@@ -25,6 +25,7 @@ public class SaveProgress : MonoBehaviour
 
     public void DeleteData()
     {
+        AudioManager.Instance.Play("New Game");
         PlayerPrefs.DeleteAll();
         //SceneManager.LoadScene(num);
     }

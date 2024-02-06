@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        AudioManager.Instance.Play("Main Theme");
     }
 
     public void Win()

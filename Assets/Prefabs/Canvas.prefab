@@ -1098,8 +1098,8 @@ MonoBehaviour:
   speedOfChange: 2
   delayOfChange: 2
   progressSlider: {fileID: 7438640725739624009}
-  speedOfFillProgressSlider: 0.1
-  speedOfDevastationProgressSlider: 0.05
+  speedOfFillProgressSlider: 0.25
+  speedOfDevastationProgressSlider: 0.1
 --- !u!1 &3514301252200383960
 GameObject:
   m_ObjectHideFlags: 0

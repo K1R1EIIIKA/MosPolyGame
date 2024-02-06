@@ -21,4 +21,9 @@ public class ManagerOfScene : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    
+    public void ButtonSound()
+    {
+        AudioManager.Instance.Play("Button");
+    }
 }
