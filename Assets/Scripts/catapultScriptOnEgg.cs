@@ -36,7 +36,7 @@ public class catapultScriptOnEgg : MonoBehaviour
     void Update()
     {
         //direction = new Vector3(-upAndDownSlider.value, leftAndRightSlider.value, 0f);
-        //aim.transform.rotation = Quaternion.Euler(direction);
+        aim.transform.rotation = Quaternion.Euler(direction);
 
         if(inCatapult)
         {
@@ -54,9 +54,9 @@ public class catapultScriptOnEgg : MonoBehaviour
             rb.isKinematic = true;
             transform.position = collision.transform.position + offset;
             
-            ObjectSelection objectSelection = GetComponent<ObjectSelection>();
-            if (objectSelection.isSelected)
-                objectSelection.Deselect();
+            //ObjectSelection objectSelection = GetComponent<ObjectSelection>();
+            //if (objectSelection.isSelected)
+            //    objectSelection.Deselect();
 
             GameManager.Instance.vcamMouseTrap.Priority = 12;
             GameManager.Instance.isInTheMouseTrap = true;

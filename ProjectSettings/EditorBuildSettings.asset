@@ -17,10 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/levels/Level 3.unity
     guid: 5b8c534d94f7ad246911ee3120c4666d
+  - enabled: 1
+    path: Assets/Scenes/levels/Level 3.5.unity
+    guid: 8fc0080441235f8478610d0e34392d8e
+  - enabled: 1
+    path: Assets/Scenes/levels/Level 4.unity
+    guid: b39b5944623c945468c043c88d0a775b
   - enabled: 0
     path: Assets/Scenes/test cutting.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/\u0436\u0430\u0440\u043A\u0430 1.unity"
     guid: 6c51b1434d3f82b4dbeef509c5a9984f
   m_configObjects: {}
