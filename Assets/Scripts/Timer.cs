@@ -65,7 +65,7 @@ public class Timer : MonoBehaviour
 
     private void Print()
     {
-        stopwatch.text = $"{hours:D2}:{minutes:D2}:{seconds:D2}";
+        stopwatch.text = $"{minutes:D2}:{seconds:D2}";
     }
 
     public int OutPutSeconds()
