@@ -54,9 +54,12 @@ public class catapultScriptOnEgg : MonoBehaviour
             rb.isKinematic = true;
             transform.position = collision.transform.position + offset;
             
-            //ObjectSelection objectSelection = GetComponent<ObjectSelection>();
-            //if (objectSelection.isSelected)
-            //    objectSelection.Deselect();
+            ObjectSelection objectSelection = GetComponent<ObjectSelection>();
+            if (objectSelection.isSelected)
+                Cursor.lockState = CursorLockMode.None;
+            
+            if (AudioManager.Instance.IsPlaying("Egg Rolling"))
+                AudioManager.Instance.Stop("Egg Rolling");
 
             GameManager.Instance.vcamMouseTrap.Priority = 12;
             GameManager.Instance.isInTheMouseTrap = true;
@@ -71,7 +74,13 @@ public class catapultScriptOnEgg : MonoBehaviour
         rb.AddForce(transform.forward * power, ForceMode.Impulse);
         catapultPanel.SetActive(false);
         
+        movingScript.enabled = true;
+        
         GameManager.Instance.vcamMouseTrap.Priority = 0;
         GameManager.Instance.isInTheMouseTrap = false;
+        
+        ObjectSelection objectSelection = GetComponent<ObjectSelection>();
+        if (objectSelection.isSelected)
+            Cursor.lockState = CursorLockMode.Locked;
     }
 }
