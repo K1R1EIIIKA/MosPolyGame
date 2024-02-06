@@ -16,19 +16,19 @@ public class CatapultRotation : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetAxis("Horizontal") < 0f)
         {
             leftAndRight -= speedOfRotation;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetAxis("Horizontal") > 0f)
         {
             leftAndRight += speedOfRotation;
         }
-        if (Input.GetKey(KeyCode.W) && upAndDown < upLimit)
+        if (Input.GetAxis("Vertical") > 0f && upAndDown < upLimit)
         {
             upAndDown += speedOfRotation;
         }
-        if (Input.GetKey(KeyCode.S) && upAndDown > downLimit)
+        if (Input.GetAxis("Vertical") < 0f && upAndDown > downLimit)
         {
             upAndDown -= speedOfRotation;
         }
