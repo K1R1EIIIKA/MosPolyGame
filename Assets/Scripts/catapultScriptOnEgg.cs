@@ -8,11 +8,13 @@ using UnityEngine.UI;
 public class catapultScriptOnEgg : MonoBehaviour
 {
     [SerializeField] private MonoBehaviour movingScript;
-    
+
     [SerializeField] private Vector3 offset;
     [SerializeField] private Vector3 direction;
+    [SerializeField] private Transform fixedPoint;
     
     [SerializeField] private float power;
+    
 
     
     //[SerializeField] private Slider upAndDownSlider;
@@ -22,11 +24,14 @@ public class catapultScriptOnEgg : MonoBehaviour
     private Rigidbody rb;
 
     [SerializeField] private GameObject catapultPanel;
+    [SerializeField] private GameObject catapultCollider;
     [SerializeField] private GameObject aim;
     
     [SerializeField] private bool inCatapult = false;
     
     [SerializeField] private Transform gunPoint;
+
+    [SerializeField] private Animator catapultAnimator;
 
     void Start()
     {
@@ -52,7 +57,7 @@ public class catapultScriptOnEgg : MonoBehaviour
             inCatapult = true;
             movingScript.enabled = false;
             rb.isKinematic = true;
-            transform.position = collision.transform.position + offset;
+            transform.position = fixedPoint.position + offset;
             
             ObjectSelection objectSelection = GetComponent<ObjectSelection>();
             if (objectSelection.isSelected)
@@ -74,6 +79,9 @@ public class catapultScriptOnEgg : MonoBehaviour
         rb.AddForce(transform.forward * power, ForceMode.Impulse);
         catapultPanel.SetActive(false);
         
+        catapultCollider.SetActive(false);
+        catapultAnimator.SetBool("isShoot", true);
+
         movingScript.enabled = true;
         
         GameManager.Instance.vcamMouseTrap.Priority = 0;
@@ -82,5 +90,13 @@ public class catapultScriptOnEgg : MonoBehaviour
         ObjectSelection objectSelection = GetComponent<ObjectSelection>();
         if (objectSelection.isSelected)
             Cursor.lockState = CursorLockMode.Locked;
+        Invoke("CatapultColliderActive", 2f);
+        direction = Vector3.zero;
+    }
+
+    private void CatapultColliderActive()
+    {
+        catapultAnimator.SetBool("isShoot", false);
+        catapultCollider.SetActive(true);
     }
 }
