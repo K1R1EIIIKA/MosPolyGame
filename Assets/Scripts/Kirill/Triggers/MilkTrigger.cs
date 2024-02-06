@@ -15,9 +15,15 @@ public class MilkTrigger : MonoBehaviour
             if (!isMilked)
             {
                 other.GetComponent<ObjectSelection>().Deselect();
-                Destroy(other);
+                other.GetComponent<MilkChange>().ChangeMilk();
+                other.GetComponent<ObjectSelection>().enabled = false;
+                other.GetComponent<ObjectAiming>().action = ObjectAiming.ObjectAction.None;
+                
                 milk.SetActive(true);
                 isMilked = true;
+                GameManager.Instance.milkCount++;
+                if (GameManager.Instance.milkCount >= GameManager.Instance.milkNeeded)
+                    GameManager.Instance.Win();
             }
         }
     }

@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     public GameObject winCanvas;
     public GameObject pauseCanvas;
     
+    [Header("Milk")]
+    public int milkCount = 0;
+    public int milkNeeded = 4;
+    
     public static GameManager Instance;
 
     private void Awake()
