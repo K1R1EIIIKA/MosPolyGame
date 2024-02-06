@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FryingPanel : MonoBehaviour
 {
-    [SerializeField] private GameObject WinPanel;
+    [SerializeField] private GameObject winTrigger;
 
     [Header("Параметры зелёного поля")]
     [SerializeField] private Slider miniGameSliderZone;
@@ -51,7 +51,7 @@ public class FryingPanel : MonoBehaviour
         {
             if(!isWinActive)
             {
-                WinPanel.SetActive(true);
+                winTrigger.SetActive(true);
                 isWinActive = true;
             }
         }
