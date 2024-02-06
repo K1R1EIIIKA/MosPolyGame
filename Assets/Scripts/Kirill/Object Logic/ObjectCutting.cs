@@ -9,12 +9,14 @@ public class ObjectCutting : MonoBehaviour
     [SerializeField] private GameObject cutAfterObject;
     [SerializeField] private GameObject cutTarget;
     [SerializeField] private float velocitySpeed = 10;
+    private Unparent unparentScript;
 
     private Camera _mainCamera;
 
     private void Awake()
     {
         _mainCamera = Camera.main;
+        unparentScript = GetComponent<Unparent>();
     }
 
     private void Update()
@@ -41,5 +43,7 @@ public class ObjectCutting : MonoBehaviour
 
         Rigidbody cutRb = cutTarget.AddComponent<Rigidbody>();
         cutRb.velocity = Vector3.down * velocitySpeed;
+
+        unparentScript.CutRope();
     }
 }
