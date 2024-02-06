@@ -49,7 +49,7 @@ MonoBehaviour:
     name: Menu Theme
     clip: {fileID: 8300000, guid: a79129663af78ac499977761be586c9c, type: 3}
     volume: 1
-    settingsVolume: 0.037
+    settingsVolume: 0.045
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -124,4 +124,20 @@ MonoBehaviour:
     settingsVolume: 0.085
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - soundType: 0
+    name: Catapult
+    clip: {fileID: 8300000, guid: 5b00f289c249d1d418712bd689c74167, type: 3}
+    volume: 1
+    settingsVolume: 0.085
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundType: 0
+    name: CuttingRope
+    clip: {fileID: 8300000, guid: df1bf9fabcb63434c92cad3716d8f1dc, type: 3}
+    volume: 1
+    settingsVolume: 0.2
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
