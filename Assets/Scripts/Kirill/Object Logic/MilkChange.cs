@@ -12,6 +12,7 @@ public class MilkChange : MonoBehaviour
         List<Material> materials = GetComponent<MeshRenderer>().materials.ToList();
         
         materials[0] = milkMaterial;
+        AudioManager.Instance.Play("Juice");
         GetComponent<MeshRenderer>().SetMaterials(materials);
     }
 }
