@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI stopwatch;
 
+    private int globalSeconds;
     private int seconds;
     private int minutes;
     private int hours;
@@ -44,6 +45,7 @@ public class Timer : MonoBehaviour
         corutineActive = true;
         yield return new WaitForSeconds(delay);
         seconds++;
+        globalSeconds++;
         corutineActive = false;
     }
 
@@ -68,7 +70,7 @@ public class Timer : MonoBehaviour
 
     public int OutPutSeconds()
     {
-        return seconds;
+        return globalSeconds;
     }
 
     public void LevelEnd()
