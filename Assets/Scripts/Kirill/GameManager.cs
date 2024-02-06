@@ -21,9 +21,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject cross;
     [HideInInspector] public bool isWon;
+    [HideInInspector] public bool isLose;
     
     [Header("Canvases")]
     public GameObject winCanvas;
+    public GameObject loseCanvas;
     public GameObject pauseCanvas;
     
     [Header("Milk")]
@@ -67,5 +69,18 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.VolumeAll(0.5f, SoundType.Music);
         else
             AudioManager.Instance.VolumeAll(1, SoundType.Music);
+    }
+
+    public void Lose()
+    {
+        Debug.Log("You lose!");
+        SetTimeScale(0);
+
+        loseCanvas.SetActive(true);
+        isLose = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        AudioManager.Instance.StopAllSoundType(SoundType.SFX);
+        AudioManager.Instance.Play("Lose");
     }
 }
