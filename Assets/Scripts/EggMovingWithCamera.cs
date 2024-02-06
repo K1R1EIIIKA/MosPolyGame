@@ -18,7 +18,6 @@ public class EggMovingWithCamera : MonoBehaviour
     {
         // Получить доступ к компоненту Rigidbody
         rb = GetComponent<Rigidbody>();
-        CheckPointLogic.Instance.SpawnOnCheckPoint(gameObject);
     }
 
     void FixedUpdate()

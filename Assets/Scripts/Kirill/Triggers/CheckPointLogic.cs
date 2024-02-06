@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,11 +33,30 @@ public class CheckPointLogic : MonoBehaviour
         if (!hasCurrent)
             spawnPoints[0].isCurrent = true;
     }
-    
+
     public void SpawnOnCheckPoint(GameObject obj)
     {
         CheckPoint spawnPoint = GetCurrentCheckPoint();
-        obj.transform.position = spawnPoint.transform.position;
+        Debug.Log(121212121212);
+        if (obj.TryGetComponent(out CharacterController controller))
+        {
+            Debug.Log(345432);
+            obj.GetComponent<CharacterController>().enabled = false;
+            obj.AddComponent<Rigidbody>();
+            obj.transform.position = spawnPoint.transform.position;
+            StartCoroutine(Aaaaaa(obj));
+        }
+        else
+        {
+            obj.transform.position = spawnPoint.transform.position;
+        }
+    }
+
+    private IEnumerator Aaaaaa(GameObject huy)
+    {
+        yield return new WaitForSeconds(0.5f);
+        huy.GetComponent<CharacterController>().enabled = true;
+        Destroy(huy.GetComponent<Rigidbody>());
     }
 
     public CheckPoint GetCurrentCheckPoint()
@@ -49,14 +69,14 @@ public class CheckPointLogic : MonoBehaviour
 
         return null;
     }
-    
+
     public void SetCheckPoint(GameObject obj)
     {
         foreach (var spawnPoint in spawnPoints)
         {
             spawnPoint.isCurrent = false;
         }
-        
+
         obj.GetComponent<CheckPoint>().isCurrent = true;
     }
 }

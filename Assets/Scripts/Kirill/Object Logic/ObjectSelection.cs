@@ -9,6 +9,7 @@ public class ObjectSelection : MonoBehaviour
 {
     [SerializeField] private bool isCameraMove;
     [SerializeField] private MonoBehaviour scriptToDisable;
+    [SerializeField] private bool needToSpawnOnSpawnPoint;
 
     private MeshRenderer _meshRenderer;
     private Camera _mainCamera;
@@ -30,6 +31,9 @@ public class ObjectSelection : MonoBehaviour
     {
         DeselectAll();
         SetMoving(false);
+        
+        if (needToSpawnOnSpawnPoint)
+            CheckPointLogic.Instance.SpawnOnCheckPoint(gameObject);
     }
 
     private void Update()
