@@ -42,14 +42,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1;
+        SetTimeScale(1);
         AudioManager.Instance.Play("Main Theme");
     }
 
     public void Win()
     {
         Debug.Log("You win!");
-        Time.timeScale = 0;
+        SetTimeScale(0);
             
         winCanvas.SetActive(true);
         isWon = true;
@@ -57,5 +57,15 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         AudioManager.Instance.StopAllSoundType(SoundType.SFX);
         AudioManager.Instance.Play("Win");
+    }
+    
+    public void SetTimeScale(float timeScale)
+    {
+        Time.timeScale = timeScale;
+        
+        if (timeScale == 0)
+            AudioManager.Instance.VolumeAll(0.5f, SoundType.Music);
+        else
+            AudioManager.Instance.VolumeAll(1, SoundType.Music);
     }
 }

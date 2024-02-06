@@ -30,7 +30,7 @@ public class PauseLogic : MonoBehaviour
         _currentMode = Cursor.lockState;
         Cursor.lockState = CursorLockMode.None;
 
-        Time.timeScale = 0;
+        GameManager.Instance.SetTimeScale(0);
         GameManager.Instance.pauseCanvas.SetActive(true);
     }
 
@@ -38,7 +38,7 @@ public class PauseLogic : MonoBehaviour
     {
         Cursor.lockState = _currentMode;
 
-        Time.timeScale = 1;
+        GameManager.Instance.SetTimeScale(1);
         GameManager.Instance.pauseCanvas.SetActive(false);
     }
 }
