@@ -11431,6 +11431,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 131539337}
     m_Modifications:
+    - target: {fileID: 463158917921007629, guid: 7ea2284642978e94281e1ba552ebb373,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1083151699778019463, guid: 7ea2284642978e94281e1ba552ebb373,
         type: 3}
       propertyPath: m_Pivot.y
@@ -11455,6 +11460,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -51
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318418082464909812, guid: 7ea2284642978e94281e1ba552ebb373,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788194108798868094, guid: 7ea2284642978e94281e1ba552ebb373,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5217745270680595816, guid: 7ea2284642978e94281e1ba552ebb373,
         type: 3}
@@ -11575,6 +11590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "Canvas \u0434\u043B\u044F \u0442\u0430\u0439\u043C\u0435\u0440\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672572053228808618, guid: 7ea2284642978e94281e1ba552ebb373,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16158,6 +16178,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 131539337}
     m_Modifications:
+    - target: {fileID: 2921686853240916721, guid: 18b14b5e4c635aa42b7e6c5b5e9f30cf,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3440901746608686901, guid: 18b14b5e4c635aa42b7e6c5b5e9f30cf,
         type: 3}
       propertyPath: m_Pivot.x
