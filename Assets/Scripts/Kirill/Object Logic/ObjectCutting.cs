@@ -45,5 +45,6 @@ public class ObjectCutting : MonoBehaviour
         cutRb.velocity = Vector3.down * velocitySpeed;
 
         unparentScript.CutRope();
+        AudioManager.Instance.Play("CuttingRope");
     }
 }

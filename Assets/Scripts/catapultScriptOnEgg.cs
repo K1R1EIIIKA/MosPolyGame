@@ -86,7 +86,10 @@ public class catapultScriptOnEgg : MonoBehaviour
         
         GameManager.Instance.vcamMouseTrap.Priority = 0;
         GameManager.Instance.isInTheMouseTrap = false;
-        
+
+        //AudioManager.Instance.StopAll();
+        AudioManager.Instance.Play("Catapult");
+
         ObjectSelection objectSelection = GetComponent<ObjectSelection>();
         if (objectSelection.isSelected)
             Cursor.lockState = CursorLockMode.Locked;
