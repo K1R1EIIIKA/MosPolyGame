@@ -4268,7 +4268,7 @@ PrefabInstance:
     - target: {fileID: 8100323678564619063, guid: 7ea2284642978e94281e1ba552ebb373,
         type: 3}
       propertyPath: speedOfFillProgressSlider
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8330526126838566245, guid: 7ea2284642978e94281e1ba552ebb373,
         type: 3}
@@ -11757,6 +11757,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3210730616224453667, guid: 805f64cdce701f74596fdbf915db3949,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 110fc70d515ce3d4eb0e073ab1695363,
+        type: 3}
     - target: {fileID: 5190971149512449945, guid: 805f64cdce701f74596fdbf915db3949,
         type: 3}
       propertyPath: m_AnchorMax.x

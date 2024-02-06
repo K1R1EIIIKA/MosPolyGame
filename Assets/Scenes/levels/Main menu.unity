@@ -191,7 +191,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: da0e863f5b7990b4f87188333c620b29,
+    m_HighlightedSprite: {fileID: 21300000, guid: eab6d52d80cf3814387ff3ef99f42742,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 01d6a770412df9e428d3df217a93f60b, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 9df5d3ec8eaf0404f829e41d8a08187f, type: 3}
@@ -800,7 +800,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: da0e863f5b7990b4f87188333c620b29,
+    m_HighlightedSprite: {fileID: 21300000, guid: eab6d52d80cf3814387ff3ef99f42742,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 01d6a770412df9e428d3df217a93f60b, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 9df5d3ec8eaf0404f829e41d8a08187f, type: 3}
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6913a0efb65bb6b4586a5264018215a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4916e09d7f682dc4ab28204ce17639ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2273,7 +2273,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: da0e863f5b7990b4f87188333c620b29,
+    m_HighlightedSprite: {fileID: 21300000, guid: eab6d52d80cf3814387ff3ef99f42742,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 01d6a770412df9e428d3df217a93f60b, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 9df5d3ec8eaf0404f829e41d8a08187f, type: 3}
@@ -3160,7 +3160,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: da0e863f5b7990b4f87188333c620b29,
+    m_HighlightedSprite: {fileID: 21300000, guid: eab6d52d80cf3814387ff3ef99f42742,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 01d6a770412df9e428d3df217a93f60b, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 9df5d3ec8eaf0404f829e41d8a08187f, type: 3}
