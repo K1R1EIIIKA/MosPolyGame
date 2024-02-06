@@ -30,6 +30,7 @@ public class FryingPanel : MonoBehaviour
     private bool corutineActive;
     private bool isWin;
     private bool isWinActive;
+    private bool isCooked;
 
     private void Start()
     {
@@ -113,9 +114,19 @@ public class FryingPanel : MonoBehaviour
 
     private void MiniGameWin()
     {
-        if(progressSlider.value >= 100)
+        if(progressSlider.value >= 100 && !isCooked)
         {
-            isWin = true;
+            AudioManager.Instance.Play("Finished Cooking");
+            isCooked = true;
+            StartCoroutine(WaitForWin());
         }
+    }
+    
+    private IEnumerator WaitForWin()
+    {
+        yield return new WaitForSeconds(1.5f);
+        
+        AudioManager.Instance.Play("Win");
+        isWin = true;
     }
 }

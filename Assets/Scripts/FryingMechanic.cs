@@ -37,7 +37,7 @@ public class FryingMechanic : MonoBehaviour
             rb.isKinematic = true;
             transform.position = collision.transform.position + offset;
             
-            AudioManager.Instance.Play("Frying");
+            AudioManager.Instance.Play("Egg Frying");
         }
     }
 }

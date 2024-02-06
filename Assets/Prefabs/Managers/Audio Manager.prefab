@@ -117,3 +117,11 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - soundType: 1
+    name: Main Theme
+    clip: {fileID: 8300000, guid: 3233c0dd71add1e4c8bad8b8ad2c396c, type: 3}
+    volume: 1
+    settingsVolume: 0.085
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
