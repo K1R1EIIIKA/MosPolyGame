@@ -15,7 +15,7 @@ public class PauseLogic : MonoBehaviour
     public void SetPause()
     {
         Debug.Log("Pause");
-        if (GameManager.Instance.isWon)
+        if (GameManager.Instance.isWon || GameManager.Instance.isLose)
             return;
 
         if (Time.timeScale == 0)

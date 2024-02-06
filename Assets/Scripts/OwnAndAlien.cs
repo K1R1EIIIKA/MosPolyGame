@@ -6,9 +6,9 @@ public class OwnAndlien : MonoBehaviour
 {
     [SerializeField] private int requiredValue;
     [SerializeField] private bool isWin;
-    [SerializeField] private GameObject losePanel;
 
-    private int score;
+    [SerializeField] private int score;
+    [SerializeField] private GameObject omlete;
 
     private void Start()
     {
@@ -21,6 +21,7 @@ public class OwnAndlien : MonoBehaviour
         {
             isWin = true;
             GameManager.Instance.Win();
+            omlete.SetActive(true);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -28,10 +29,11 @@ public class OwnAndlien : MonoBehaviour
         if (collision.gameObject.tag == "GoodShtuka")
         {
             score++;
+            Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "BadShtuka")
         {
-            losePanel.SetActive(true);
+            GameManager.Instance.Lose();
         }
     }
 }
