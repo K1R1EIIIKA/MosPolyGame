@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &701417349885662275
+--- !u!1 &611215588571960069
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4216948370560807836}
-  - component: {fileID: 677719349463431755}
+  - component: {fileID: 1891789340038643385}
+  - component: {fileID: 7043014630215138356}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -17,47 +17,103 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4216948370560807836
+--- !u!4 &1891789340038643385
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701417349885662275}
+  m_GameObject: {fileID: 611215588571960069}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -334.1469, y: -135.15347, z: 8.982636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.509106, y: 3.0900798, z: 55.59672}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &677719349463431755
+--- !u!114 &7043014630215138356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701417349885662275}
+  m_GameObject: {fileID: 611215588571960069}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20410e6017b1d9f43ab89d3746a68911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - soundType: 1
+    name: Menu Theme
+    clip: {fileID: 8300000, guid: a79129663af78ac499977761be586c9c, type: 3}
+    volume: 1
+    settingsVolume: 0.037
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - soundType: 0
+    name: New Game
+    clip: {fileID: 8300000, guid: 8296d2b8d4ba47e4e83f97ba3523d465, type: 3}
+    volume: 1
+    settingsVolume: 0.169
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundType: 0
+    name: Button
+    clip: {fileID: 8300000, guid: 209489e0dc54ea24e85dfae9aa3af0ae, type: 3}
+    volume: 1
+    settingsVolume: 0.319
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - soundType: 0
     name: Egg Rolling
     clip: {fileID: 8300000, guid: 8e0b11649b642b441a7500487d96e40f, type: 3}
     volume: 1
-    settingsVolume: 0.379
+    settingsVolume: 0.666
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - soundType: 0
+    name: Death
+    clip: {fileID: 8300000, guid: cc8e654913f69f341b10745aedb9c4ed, type: 3}
+    volume: 1
+    settingsVolume: 0.129
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
   - soundType: 0
     name: Win
     clip: {fileID: 8300000, guid: 28e82f6d1c7233e4baf62e019978e5cc, type: 3}
     volume: 1
     settingsVolume: 0.07
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundType: 0
+    name: Mousetrap Egg
+    clip: {fileID: 8300000, guid: 4a49e4d7e2c3fca459bfbe9a904827bc, type: 3}
+    volume: 1
+    settingsVolume: 0.118
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundType: 0
+    name: Egg Frying
+    clip: {fileID: 8300000, guid: 078f1c324222b924c8923b03c2264595, type: 3}
+    volume: 1
+    settingsVolume: 0.15
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - soundType: 0
+    name: Finished Cooking
+    clip: {fileID: 8300000, guid: cda081dbefcd90b4581f156bab2be0a6, type: 3}
+    volume: 1
+    settingsVolume: 0.126
     pitch: 1
     loop: 0
     source: {fileID: 0}

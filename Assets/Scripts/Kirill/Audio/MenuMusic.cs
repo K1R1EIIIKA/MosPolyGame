@@ -7,6 +7,12 @@ public class MenuMusic : MonoBehaviour
 {
     private void Start()
     {
+        AudioManager.Instance.StopAll();
         AudioManager.Instance.Play("Menu Theme");
+    }
+
+    private void OnDestroy()
+    {
+        AudioManager.Instance.StopAll();
     }
 }

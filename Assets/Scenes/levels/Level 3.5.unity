@@ -1247,7 +1247,7 @@ Transform:
   - {fileID: 1589626382}
   - {fileID: 2032802104}
   - {fileID: 1123654561}
-  - {fileID: 1000397623}
+  - {fileID: 1130611168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &131629039
@@ -8444,67 +8444,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 990684223}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1000397621
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1000397623}
-  - component: {fileID: 1000397622}
-  m_Layer: 0
-  m_Name: Audio Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1000397622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000397621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20410e6017b1d9f43ab89d3746a68911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - soundType: 0
-    name: Egg Rolling
-    clip: {fileID: 8300000, guid: 8e0b11649b642b441a7500487d96e40f, type: 3}
-    volume: 1
-    settingsVolume: 0.379
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - soundType: 0
-    name: Win
-    clip: {fileID: 8300000, guid: 28e82f6d1c7233e4baf62e019978e5cc, type: 3}
-    volume: 1
-    settingsVolume: 0.07
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &1000397623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000397621}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -334.1469, y: -135.15347, z: 8.982636}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 131539337}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1005517227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9902,6 +9841,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoints:
   - {fileID: 2048725223}
+--- !u!1001 &1130611167
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 131539337}
+    m_Modifications:
+    - target: {fileID: 611215588571960069, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.509106
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.0900798
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 55.59672
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 840f3a1e80b6a20439a9011ef0cbde58, type: 3}
+--- !u!4 &1130611168 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1891789340038643385, guid: 840f3a1e80b6a20439a9011ef0cbde58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1130611167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1137430699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13754,6 +13767,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Win Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4250324616750455850, guid: f1a83b956e0a40f4dbff95b1837b17a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16304,6 +16322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475620317291641765, guid: 8ae279f71ef291540bed7f54ac8ea7da,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475620317291641765, guid: 8ae279f71ef291540bed7f54ac8ea7da,
+        type: 3}
       propertyPath: m_TagString
       value: PanTarget
       objectReference: {fileID: 0}
@@ -16315,7 +16338,7 @@ PrefabInstance:
     - target: {fileID: 8986812232182681162, guid: 8ae279f71ef291540bed7f54ac8ea7da,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8986812232182681162, guid: 8ae279f71ef291540bed7f54ac8ea7da,
         type: 3}
