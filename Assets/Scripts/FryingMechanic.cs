@@ -14,6 +14,11 @@ public class FryingMechanic : MonoBehaviour
 
     [SerializeField] private bool inPan = false;
 
+    [SerializeField] private MeshRenderer firstState;
+    [SerializeField] private GameObject secondState;
+
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,6 +28,9 @@ public class FryingMechanic : MonoBehaviour
     {
         if (collision.gameObject.tag == "Pan")
         {
+            transform.rotation = Quaternion.Euler(0, 0, 0); 
+            firstState.enabled = false;
+            secondState.SetActive(true);
             PanPanel.SetActive(true);
             inPan = true;
             movingScript.enabled = false;
